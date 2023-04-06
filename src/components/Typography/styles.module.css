@@ -1,0 +1,107 @@
+.h1 {
+    font-weight: 300;
+    font-size: 6rem;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+    margin-bottom: 0.35em;
+
+}
+
+.h2 {
+    font-weight: 300;
+    font-size: 3.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+    margin-bottom: 0.35em;
+}
+
+.h3 {
+    font-weight: 400;
+    font-size: 3rem;
+    line-height: 1.167;
+    letter-spacing: 0em;
+    margin-bottom: 0.35em;
+}
+
+.h4 {
+    font-weight: 400;
+    font-size: 2.125rem;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+    margin-bottom: 0.35em;
+}
+
+.h5 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.334;
+    letter-spacing: 0em;
+    margin-bottom: 0.35em;
+}
+
+.h6 {
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+    margin-bottom: 0.35em;
+}
+
+.body1 {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    margin-bottom: 0.35em;
+}
+
+.body2 {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter: 0.01071em;
+}
+
+.caption {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 1.66;
+    letter-spacing: 0.03333em;
+    display: block;
+}
+
+.primary {
+    color: var(--primary-main-color);
+}
+
+.secondary {
+    color: var(--secondary-main-color);
+}
+
+.error {
+    color: var(--error-main-color);
+}
+
+.warning {
+    color: var(--warning-main-color);
+}
+
+.info {
+    color: var(--info-main-color);
+}
+
+.success {
+    color: var(--success-main-color);
+}
+
+.textPrimary {
+    color: var(--text-text-primary-color);
+}
+
+.textSecondary {
+    color: var(--text-text-secondary-color);
+}
+
+.textDisabled {
+    color: var(--text-text-disabled-color);
+}

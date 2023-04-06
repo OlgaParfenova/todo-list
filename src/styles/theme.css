@@ -1,0 +1,27 @@
+html[data-theme='light'] {
+    --base-bg: #FFF;
+    --paper-bg: #E7EBF0;
+    --primary-main-color: #1976D2;
+    --secondary-main-color:#9C27B0;
+    --error-main-color:#D32F2F;
+    --warning-main-color: #ED6C02;
+    --info-main-color: #0288D1;
+    --success-main-color: #2E7D32;
+    --text-primary-color: rgba(0, 0, 0, 0.87);
+    --text-secondary-color: rgba(0, 0, 0, 0.6);
+    --text-disabled-color: rgba(0, 0, 0, 0.38);
+}
+
+html[data-theme='dark'] {
+    --base-bg: #0A1929;
+    --paper-bg: #1A2027;
+    --primary-main-color: rgb(144, 202, 249);
+    --secondary-main-color:rgb(206, 147, 216);
+    --error-main-color:rgb(244, 67, 54);
+    --warning-main-color: rgb(255, 167, 38);
+    --info-main-color: rgb(41, 182, 246);
+    --success-main-color: rgb(102, 187, 106);
+    --text-primary-color: rgb(255, 255, 255);
+    --text-secondary-color: rgba(255, 255, 255, 0.7);
+    --text-disabled-color: rgba(255, 255, 255, 0.5);
+}
