@@ -6,3 +6,4 @@ export * from './doneIcon';
 export * from './searchIcon';
 export * from './saveIcon';
 export * from './backIcon';
+export * from './activateIcon';

@@ -1,0 +1,13 @@
+.tabs {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tabs > *:first-child {
+    border-top-left-radius: 6px;
+}
+
+.tabs > *:last-child {
+    border-top-right-radius: 6px;
+}

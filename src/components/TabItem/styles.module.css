@@ -1,0 +1,16 @@
+.tabItem {
+    text-align: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    border:1px solid var(--primary-main-color);
+    background: transparent;
+    color: var(--primary-main-color);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.active {
+    border:1px solid var(--primary-main-color);
+    background-color: var(--primary-main-color);
+    color: rgba(255, 255, 255, .8);
+}
