@@ -8,19 +8,19 @@ const { Consumer: RouterConsumer } = routerContext;
 export class TaskListContainer extends Component {
   static contextType = storeContext;
 
-  handleClickButtonDelete = taskId => () => {
+  handleClickButtonDelete = (taskId) => () => {
     const { deleteTask } = this.context;
     deleteTask(taskId);
   };
-  handleClickButtonActivate = taskId => () => {
+  handleClickButtonActivate = (taskId) => () => {
     const { setTaskStatus } = this.context;
     setTaskStatus(taskId, 'active');
   };
-  handleClickButtonArchive = taskId => () => {
+  handleClickButtonArchive = (taskId) => () => {
     const { setTaskStatus } = this.context;
     setTaskStatus(taskId, 'archived');
   };
-  handleClickButtonDone = taskId => () => {
+  handleClickButtonDone = (taskId) => () => {
     const { setTaskStatus } = this.context;
     setTaskStatus(taskId, 'done');
   };
@@ -33,6 +33,9 @@ export class TaskListContainer extends Component {
             const handleClickButtonEdit = () => {
               navigate('editPage', { pageId: id });
             };
+            const handleClickLabelTask = () => {
+              navigate('detailsPage', { pageId: id });
+            };
 
             return (
               <TaskItem
@@ -42,6 +45,7 @@ export class TaskListContainer extends Component {
                 onArchiveTask={this.handleClickButtonArchive(id)}
                 onDoneTask={this.handleClickButtonDone(id)}
                 onEditTask={handleClickButtonEdit}
+                onViewTask={handleClickLabelTask}
                 status={status}
               >
                 {title}

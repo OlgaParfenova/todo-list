@@ -14,6 +14,7 @@ export const TaskItem = ({
   onDoneTask,
   onActivateTask,
   onEditTask,
+  onViewTask,
   status,
   children,
   ...otherProps
@@ -25,7 +26,11 @@ export const TaskItem = ({
         className || ''
       }`}
     >
-      <Typography className={styles.text} children={children} />
+      <Typography
+        className={styles.text}
+        children={children}
+        onClick={onViewTask}
+      />
       {status !== 'done' && (
         <ButtonDone className={styles.button} onClick={onDoneTask} />
       )}

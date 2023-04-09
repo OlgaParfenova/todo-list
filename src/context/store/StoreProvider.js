@@ -10,46 +10,72 @@ export class StoreProvider extends Component {
     this.state = initialState;
   }
 
-  deleteTask = taskId => {
+  deleteTask = (taskId) => {
     const { tasks, activeTab, searchQuery } = this.state;
-    const id = tasks.findIndex(item => item.id === taskId);
+    const id = tasks.findIndex((item) => item.id === taskId);
     if (id === -1) return;
     const newTasks = [...tasks.slice(0, id), ...tasks.slice(id + 1)];
     this.setState({ tasks: newTasks });
     this.setFilteredTasks(activeTab, searchQuery);
   };
 
-  updateTask = task => {
+  updateTask = (task) => {
     const { tasks, activeTab, searchQuery } = this.state;
-    const id = tasks.findIndex(item => item.id === task.id);
+    const id = tasks.findIndex((item) => item.id === task.id);
     if (id === -1) return;
     const newTasks = [...tasks.slice(0, id), task, ...tasks.slice(id + 1)];
     this.setState({ tasks: newTasks });
     this.setFilteredTasks(activeTab, searchQuery);
   };
 
-  getTask = taskId => {
+  addTask = (task) => {
+    const { tasks, activeTab, searchQuery } = this.state;
+    const lastTask = tasks[tasks.length - 1];
+    const newTasks = [
+      ...tasks,
+      {
+        ...task,
+        status: 'active',
+        id: lastTask.id + 1,
+      },
+    ];
+    this.setState({ tasks: newTasks });
+    this.setFilteredTasks(activeTab, searchQuery);
+  };
+
+  getTask = (taskId) => {
     const { tasks } = this.state;
-    return tasks.find(item => item.id === taskId);
+    return tasks.find((item) => item.id === taskId);
+  };
+
+  filterTasks = (searchQuery) => {
+    this.setState((state) => {
+      return {
+        searchQuery,
+        filteredTasks: getFilteredTasks(state.tasks)(
+          state.activeTab,
+          searchQuery,
+        ),
+      };
+    });
   };
 
   setFilteredTasks = (activeTab, searchQuery = '') => {
-    const { tasks } = this.state;
-    this.setState(state => {
+    this.setState((state) => {
       return {
         filteredTasks: getFilteredTasks(state.tasks)(activeTab, searchQuery),
       };
     });
   };
 
-  setActiveTab = activeTab => {
+  setActiveTab = (activeTab) => {
     this.setState({ activeTab });
-    this.setFilteredTasks(activeTab, '');
+    this.setFilteredTasks(activeTab, this.state.searchQuery);
   };
 
   setTaskStatus = (taskId, status) => {
     const { tasks, activeTab, searchQuery } = this.state;
-    const id = tasks.findIndex(item => item.id === taskId);
+    const id = tasks.findIndex((item) => item.id === taskId);
     if (id === -1) return;
     const task = { ...tasks[id] };
     task.status = status;
@@ -66,6 +92,8 @@ export class StoreProvider extends Component {
       setTaskStatus: this.setTaskStatus,
       getTask: this.getTask,
       updateTask: this.updateTask,
+      addTask: this.addTask,
+      filterTasks: this.filterTasks,
     };
 
     const { children } = this.props;

@@ -1,62 +1,67 @@
 .button {
-    display: inline-block;
-    height: 40px;
-    min-width: 40px;
-    cursor: pointer;
-    border: none;
-    position: relative;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 40px;
-    text-align: center;
-    color: rgba(255, 255, 255, .8);
-    text-transform: uppercase;
-    padding: 0 16px;
+  display: inline-block;
+  height: 40px;
+  min-width: 40px;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  padding: 0 16px;
+  font-weight: 700;
+}
+
+.button:disabled {
+  background-color: var(--text-disabled-color);
+  color: var(--text-primary-color);
+  cursor: auto;
 }
 
 .button svg {
-    display: block;
-    position: absolute;
-    width: 24px;
-    height: auto;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.8;
+  display: block;
+  position: absolute;
+  width: 24px;
+  height: auto;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.8;
 }
 
 .primary {
-    background: var(--primary-main-color);
+  background: var(--primary-main-color);
 }
 
 .secondary {
-    background: var(--secondary-main-color);
+  background: var(--secondary-main-color);
 }
 
 .error {
-    background: var(--error-main-color);
+  background: var(--error-main-color);
 }
 
 .warning {
-    background: var(--warning-main-color);
+  background: var(--warning-main-color);
 }
 
 .info {
-    background: var(--info-main-color);
+  background: var(--info-main-color);
 }
 
 .success {
-    background: var(--success-main-color);
+  background: var(--success-main-color);
 }
 
 html[data-theme='light'] .button svg * {
-    fill: #FFF;
+  fill: #fff;
 }
 
 html[data-theme='dark'] .button svg * {
-    fill: #FFF;
+  fill: #fff;
 }
-
-

@@ -6,6 +6,7 @@ import {
   TabsContainer,
   AddButtonContainer,
 } from './innerComponents';
+import { ButtonSearch, Search } from '../../components';
 
 export class MainPage extends Component {
   render() {
@@ -14,6 +15,7 @@ export class MainPage extends Component {
         <AddButtonContainer color="primary" className={styles.button}>
           Add a new task
         </AddButtonContainer>
+        <Search className={styles.search} />
         <TabsContainer className={styles.tabs} />
         <TaskListContainer />
       </>

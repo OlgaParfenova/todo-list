@@ -1,6 +1,6 @@
 import './styles/theme.css';
 import { Container } from './components';
-import { MainPage, AddPage, EditPage } from './pages';
+import { MainPage, AddPage, EditPage, DetailsPage } from './pages';
 import { StoreProvider, RouterProvider, Route } from './context';
 
 function App() {
@@ -16,6 +16,9 @@ function App() {
           </Route>
           <Route page={'editPage'}>
             <EditPage />
+          </Route>
+          <Route page={'detailsPage'}>
+            <DetailsPage />
           </Route>
         </StoreProvider>
       </RouterProvider>

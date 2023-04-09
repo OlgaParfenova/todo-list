@@ -1,0 +1,8 @@
+.buttonsWrap {
+  margin-top: 24px;
+  margin-left: -4px;
+}
+
+.buttonsWrap > * {
+  margin-left: 4px;
+}

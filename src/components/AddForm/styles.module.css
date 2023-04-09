@@ -1,14 +1,20 @@
 .input {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .textarea {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .button {
-    margin-top: 6px;
-    min-width: 120px;
-    text-transform: uppercase;
-    font-weight: 500;
+  margin-top: 6px;
+  min-width: 120px;
+}
+
+.cancelButton {
+  margin-left: 4px;
+}
+
+.errorMessage {
+  margin-top: 8px;
 }

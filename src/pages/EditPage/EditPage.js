@@ -1,17 +1,8 @@
 import { EditForm, Typography } from '../../components';
 import styles from './styles.module.css';
-import { routerContext } from '../../context';
+import { withRouter } from '../../hoc';
 
-const { Consumer: RouterConsumer } = routerContext;
-const EditFormWithRouter = props => {
-  return (
-    <RouterConsumer>
-      {({ navigate, page }) => {
-        return <EditForm navigate={navigate} page={page} {...props} />;
-      }}
-    </RouterConsumer>
-  );
-};
+const EditFormWithRouter = withRouter(EditForm);
 
 export const EditPage = () => {
   return (
