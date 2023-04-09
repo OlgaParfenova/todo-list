@@ -1,16 +1,16 @@
-import {Component} from "react";
+import { Component } from 'react';
 
-import {routerContext} from "../../../context";
-import {Button} from "../../../components";
+import { routerContext } from '../../../context';
+import { Button } from '../../../components';
 
 export class AddButtonContainer extends Component {
-    static contextType = routerContext;
+  static contextType = routerContext;
 
-    handleClickButton = () => {
-        this.context.navigate('addPage');
-    }
+  handleClickButton = () => {
+    this.context.navigate('addPage');
+  };
 
-    render() {
-        return <Button onClick={this.handleClickButton} {...this.props} />
-    }
+  render() {
+    return <Button onClick={this.handleClickButton} {...this.props} />;
+  }
 }

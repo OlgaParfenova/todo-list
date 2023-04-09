@@ -1,6 +1,6 @@
 export const initialState = {
-    page: {
-        value: 'mainPage',
-        payload: null,
-    }
-}
+  page: {
+    value: 'mainPage',
+    payload: null,
+  },
+};
