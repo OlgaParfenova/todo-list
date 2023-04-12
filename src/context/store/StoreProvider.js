@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { initialState } from './initialState';
 import { storeContext } from './storeContext';
 import { getFilteredTasks } from '../../utils';
+import { localStorageApi } from '../../api';
 
 export class StoreProvider extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ export class StoreProvider extends Component {
     if (id === -1) return;
     const newTasks = [...tasks.slice(0, id), ...tasks.slice(id + 1)];
     this.setState({ tasks: newTasks });
+    localStorageApi.setTasks(newTasks);
     this.setFilteredTasks(activeTab, searchQuery);
   };
 
@@ -25,6 +27,7 @@ export class StoreProvider extends Component {
     if (id === -1) return;
     const newTasks = [...tasks.slice(0, id), task, ...tasks.slice(id + 1)];
     this.setState({ tasks: newTasks });
+    localStorageApi.setTasks(newTasks);
     this.setFilteredTasks(activeTab, searchQuery);
   };
 
@@ -40,6 +43,7 @@ export class StoreProvider extends Component {
       },
     ];
     this.setState({ tasks: newTasks });
+    localStorageApi.setTasks(newTasks);
     this.setFilteredTasks(activeTab, searchQuery);
   };
 

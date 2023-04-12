@@ -14,12 +14,6 @@ class Search extends Component {
     };
   }
 
-  handleChangeInput = (name) => (event) => {
-    this.setState({
-      [name]: event.target.value,
-    });
-  };
-
   componentDidMount() {
     const { searchQuery } = this.context;
     this.setState({
@@ -28,11 +22,25 @@ class Search extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { search } = this.state;
-    const { filterTasks } = this.context;
-    if (prevState.search === search) return;
-    filterTasks(search);
+    clearTimeout(this.timerDelay);
+    this.timerDelay = setTimeout(() => {
+      const { search } = this.state;
+      const { filterTasks } = this.context;
+      if (prevState.search === search) return;
+      filterTasks(search);
+      clearTimeout(this.timerDelay);
+    }, 1000);
   }
+
+  componentWillUnmount() {
+    clearTimeout(this.timerDelay);
+  }
+
+  handleChangeInput = (name) => (event) => {
+    this.setState({
+      [name]: event.target.value,
+    });
+  };
 
   render() {
     const { className, ...otherProps } = this.props;

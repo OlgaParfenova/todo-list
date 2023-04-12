@@ -7,6 +7,7 @@ export * from './ButtonDelete';
 export * from './ButtonDone';
 export * from './ButtonEdit';
 export * from './ButtonSearch';
+export * from './ButtonThemeMode';
 export * from './EditForm';
 export * from './Input';
 export * from './Paper';

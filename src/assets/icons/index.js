@@ -7,3 +7,5 @@ export * from './searchIcon';
 export * from './saveIcon';
 export * from './backIcon';
 export * from './activateIcon';
+export * from './lightModeIcon';
+export * from './darkModeIcon';

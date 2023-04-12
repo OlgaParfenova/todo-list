@@ -1,15 +1,17 @@
 .textarea {
-    display: block;
-    width: 100%;
-    min-height: 150px;
-    resize: vertical;
-    border-radius: 4px;
-    padding: 0 8px;
-    font-size: 16px;
-    border: 1px solid var(--text-primary-color);
-    line-height: 48px;
+  display: block;
+  width: 100%;
+  min-height: 150px;
+  resize: vertical;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 16px;
+  border: 1px solid var(--primary-main-color);
+  line-height: 48px;
+  color: var(--text-primary-color);
+  background: var(--base-bg);
 }
 
 .invalid {
-    border-color: var(--error-main-color);
+  border-color: var(--error-main-color);
 }

@@ -1,5 +1,8 @@
+import { localStorageApi } from '../../api';
+
+const tasksFromLocalStorage = localStorageApi.getTasks();
 export const initialState = {
-  tasks: [
+  tasks: tasksFromLocalStorage || [
     {
       id: 0,
       title: 'First task',
@@ -31,10 +34,10 @@ export const initialState = {
       status: 'active',
     },
   ],
-  activeTab: 'active', // done, archived
-  currentPage: 'mainPage', // editPage, addPage
+  activeTab: 'active',
+  currentPage: 'mainPage',
   searchQuery: '',
-  filteredTasks: [
+  filteredTasks: tasksFromLocalStorage || [
     {
       id: 0,
       title: 'First task',
