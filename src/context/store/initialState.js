@@ -1,6 +1,10 @@
 import { localStorageApi } from '../../api';
 
 const tasksFromLocalStorage = localStorageApi.getTasks();
+const activeTasksFromLocalStorage =
+  tasksFromLocalStorage &&
+  tasksFromLocalStorage.filter((item) => item.status === 'active');
+
 export const initialState = {
   tasks: tasksFromLocalStorage || [
     {
@@ -37,7 +41,7 @@ export const initialState = {
   activeTab: 'active',
   currentPage: 'mainPage',
   searchQuery: '',
-  filteredTasks: tasksFromLocalStorage || [
+  filteredTasks: activeTasksFromLocalStorage || [
     {
       id: 0,
       title: 'First task',

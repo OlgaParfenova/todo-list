@@ -66,8 +66,12 @@ export class StoreProvider extends Component {
 
   setFilteredTasks = (activeTab, searchQuery = '') => {
     this.setState((state) => {
+      const filteredTasks = getFilteredTasks(state.tasks)(
+        activeTab,
+        searchQuery,
+      );
       return {
-        filteredTasks: getFilteredTasks(state.tasks)(activeTab, searchQuery),
+        filteredTasks,
       };
     });
   };
@@ -85,6 +89,7 @@ export class StoreProvider extends Component {
     task.status = status;
     const newTasks = [...tasks.slice(0, id), task, ...tasks.slice(id + 1)];
     this.setState({ tasks: newTasks });
+    localStorageApi.setTasks(newTasks);
     this.setFilteredTasks(activeTab, searchQuery);
   };
 

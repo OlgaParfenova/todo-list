@@ -1,6 +1,6 @@
 import styles from './styles.module.css';
 
-const getVariantClassName = variant => {
+const getVariantClassName = (variant) => {
   switch (variant) {
     case 'h1':
       return styles.h1;
@@ -23,7 +23,7 @@ const getVariantClassName = variant => {
   }
 };
 
-const getColorClassName = color => {
+const getColorClassName = (color) => {
   switch (color) {
     case 'primary':
       return styles.primary;
@@ -56,9 +56,9 @@ export const Typography = ({
   return (
     <p
       {...otherProps}
-      className={`${getVariantClassName(variant)} ${className || ''} ${
-        styles[color]
-      }`}
+      className={`${getVariantClassName(variant)} ${
+        className || ''
+      } ${getColorClassName(color)}`}
     >
       {children}
     </p>

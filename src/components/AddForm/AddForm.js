@@ -25,7 +25,6 @@ export class AddForm extends Component {
   }
 
   componentDidMount() {
-    const { page } = this.props;
     this.setState({
       title: '',
       description: '',

@@ -1,13 +1,8 @@
 import { Component } from 'react';
 
 import styles from './styles.module.css';
-import {
-  TaskListContainer,
-  TabsContainer,
-  AddButtonContainer,
-  Header,
-} from './innerComponents';
-import { ButtonSearch, Search } from '../../components';
+import { TaskListContainer, TabsContainer, Header } from './innerComponents';
+import { Search } from '../../components';
 
 export class MainPage extends Component {
   render() {

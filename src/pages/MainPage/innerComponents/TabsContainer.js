@@ -1,15 +1,14 @@
 import { Component } from 'react';
 
-import { routerContext, storeContext } from '../../../context';
+import { storeContext } from '../../../context';
 import { TabItem, Tabs } from '../../../components';
 
-const { Consumer: RouterConsumer } = routerContext;
 const tabs = ['active', 'done', 'archived'];
 
 export class TabsContainer extends Component {
   static contextType = storeContext;
 
-  handleClickTab = status => () => {
+  handleClickTab = (status) => () => {
     const { setActiveTab, activeTab } = this.context;
     if (activeTab === status) return;
     setActiveTab(status);
@@ -17,7 +16,7 @@ export class TabsContainer extends Component {
 
   render() {
     const { activeTab } = this.context;
-    const tabsItems = tabs.map(item => (
+    const tabsItems = tabs.map((item) => (
       <TabItem
         key={item}
         isActive={activeTab === item}

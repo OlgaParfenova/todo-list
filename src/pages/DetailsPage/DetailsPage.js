@@ -1,4 +1,4 @@
-import { Button, EditForm, Typography } from '../../components';
+import { Button, Typography } from '../../components';
 import styles from './styles.module.css';
 import { withRouter, withStore } from '../../hoc';
 
@@ -15,10 +15,8 @@ const DetailsPage = ({ page, navigate, getTask }) => {
 
   return (
     <>
-      <Typography variant="h3" className={styles.title}>
-        {title}
-      </Typography>
-      <Typography variant="body1" className={styles.title}>
+      <Typography variant="h3">{title}</Typography>
+      <Typography variant="body1">
         {description || 'No description has been added yet.'}
       </Typography>
       <div className={styles.buttonsWrap}>
